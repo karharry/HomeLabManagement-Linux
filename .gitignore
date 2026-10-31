@@ -1,0 +1,6 @@
+Linux/.venv/
+Linux/dist/
+Linux/build/
+Linux/*.spec
+__pycache__/
+.pytest_cache/

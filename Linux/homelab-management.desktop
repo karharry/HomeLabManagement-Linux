@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=HomeLab Management
+Comment=Monitor and manage your home lab
+Exec=homelab-management
+Icon=homelab-management
+Categories=System;Monitor;
+StartupWMClass=homelab-management
+Terminal=false

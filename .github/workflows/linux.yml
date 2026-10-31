@@ -1,0 +1,23 @@
+name: Linux build
+on:
+  push:
+    paths: ["Linux/**", ".github/workflows/linux.yml"]
+  pull_request:
+    paths: ["Linux/**"]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Linux
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update && sudo apt-get install -y libegl1 libxkbcommon-x11-0 libdbus-1-3 libgl1
+      - run: ./build.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HomeLabManagement-linux
+          path: Linux/dist/*.tar.gz
